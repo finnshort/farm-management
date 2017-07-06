@@ -5,16 +5,32 @@ import './index.css';
 class Bed extends React.Component {
   render() {
     return (
-      <button className="bed">
-        {/* TODO */}
+      <button className="bed" onClick={() => this.props.onClick()}>
+        {this.props.crop}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      beds: Array(9).fill(null),
+    };
+  }
+
+  handleClick(i) {
+    const beds = this.state.beds.slice();
+    beds[i] = 'kale';
+    this.setState({beds: beds});
+  }
+
   renderBed(i) {
-    return <Bed />;
+    return <Bed
+      crop={this.state.beds[i]}
+      onClick={() => this.handleClick(i)}
+      />;
   }
 
   render() {
@@ -42,10 +58,25 @@ class Board extends React.Component {
   }
 }
 
+class ControlPanel extends React.Component {
+  render(){
+    const instructions = 'Select the crop to add'
+
+    return (
+      <div>
+        <div className="instructions">{instructions}</div>
+      </div>
+    )
+  }
+}
+
 class Farm extends React.Component {
   render() {
     return (
       <div className="farm">
+        <div className="control-panel">
+          <ControlPanel />
+        </div>
         <div className="farm-board">
           <Board />
         </div>

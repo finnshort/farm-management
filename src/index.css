@@ -15,6 +15,8 @@ ol, ul {
 
 .status {
   margin-bottom: 10px;
+  text-align: center;
+  font-size: 36px;
 }
 
 .bed {
@@ -34,6 +36,15 @@ ol, ul {
 
 .bed:focus {
   outline: none;
+}
+
+.control-panel {
+  background: lightgray;
+  margin-top: 60px;
+}
+
+.instructions {
+  font-size: 24px;
 }
 
 .kbd-navigation .bed:focus {
