@@ -7,7 +7,10 @@ ol, ul {
   padding-left: 30px;
 }
 
-.board-row:after {
+.garden {
+  margin: 50px;
+}
+.garden-row:after {
   clear: both;
   content: "";
   display: table;
@@ -34,17 +37,50 @@ ol, ul {
   width: 150px;
 }
 
+.cropList {
+  list-style-type: none;
+}
+
+.option {
+font-size: 20px;
+border: none;
+background: #fff;
+margin: 1px;
+font: "Century Gothic";
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.peas {
+  color: #c5e1a5;
+}
+
+.kale {
+  color: #1b5e20
+}
+
+.carrots {
+  color: #ff5722;
+}
+
+button:focus {
+  outline: none;
+}
+
 .bed:focus {
   outline: none;
 }
 
 .control-panel {
-  background: lightgray;
-  margin-top: 60px;
+  background: #fff;
+  margin: 60px;
 }
 
 .instructions {
   font-size: 24px;
+  font-weight: bold;
 }
 
 .kbd-navigation .bed:focus {
