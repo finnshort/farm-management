@@ -29,7 +29,7 @@ ol, ul {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 300px;
+  height: 250px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
@@ -63,6 +63,11 @@ font: "Century Gothic";
 
 .carrots {
   color: #ff5722;
+}
+
+.beets {
+  color: #6a1b9a;
+
 }
 
 button:focus {

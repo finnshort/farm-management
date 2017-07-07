@@ -67,17 +67,31 @@ class ControlPanel extends React.Component {
       />;
   }
 
-  render(){
-    const instructions = 'Select the crop to add'
+  renderCropList() {
+    const list = [];
+    for(let i=0;i<(this.props.cropOptions.length);i++){
+      list.push(<li>{this.renderOption(i)}</li>)
+    }
+    return (
+      <ul className="cropList">
+        {list}
+      </ul>
+    )
+  }
 
+  renderAddCrop() {
+
+  }
+
+  render(){
+    const instructions1 = 'Select crop to plant'
+    const instructions2 = 'Add a crop'
     return (
       <div>
-        <div className="instructions">{instructions}</div>
-        <ul className="cropList">
-          <li>{this.renderOption(0)}</li>
-          <li>{this.renderOption(1)}</li>
-          <li>{this.renderOption(2)}</li>
-        </ul>
+        <div className="instructions">{instructions1}</div>
+          {this.renderCropList()}
+        <div className="instructions">{instructions2}</div>
+          {this.renderAddCrop()}
       </div>
     )
   }
@@ -88,7 +102,7 @@ class Farm extends React.Component {
     super();
     this.state = {
       beds: Array(9).fill(null),
-      cropOptions: ["carrots", "kale", "peas"],
+      cropOptions: ["carrots", "kale", "peas", "beets", "strawbs"],
       selectedCropIndex: 0
     };
   }
